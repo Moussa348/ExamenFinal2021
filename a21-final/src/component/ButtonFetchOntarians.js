@@ -1,10 +1,13 @@
 import React from "react";
 
-const ButtonFetchOntarians = ({ url, clients, setClients }) => {
+const ButtonFetchOntarians = ({ url, setClients }) => {
   const getListClientByProvince = () => {
     fetch(`${url}/getListClientByProvince/ON`)
       .then((response) => response.json())
-      .then((data) => setClients(data));
+      .then((data) => {
+        console.log(data);
+        setClients(data);
+      });
   };
 
   return (

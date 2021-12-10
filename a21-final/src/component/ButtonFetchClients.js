@@ -1,10 +1,13 @@
 import React from "react";
 
-const ButtonFetchClients = ({ url, clients, setClients }) => {
+const ButtonFetchClients = ({ url, setClients }) => {
   const getListClient = () => {
     fetch(`${url}/getListClient`)
       .then((response) => response.json())
-      .then((data) => setClients(data));
+      .then((data) => {
+          console.log(data);
+          setClients(data);
+        });
   };
 
   return (
