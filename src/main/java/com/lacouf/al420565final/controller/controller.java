@@ -26,8 +26,8 @@ public class controller {
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/getListCitizenByProvince/{province}")
-    public List<Client> getListCitizenByProvince(@PathVariable String province) {
+    @GetMapping("/getListClientByProvince/{province}")
+    public List<Client> getListClientByProvince(@PathVariable String province) {
         return ClientFactory.getClients()
                 .stream()
                 .filter(client -> client.getProvince().equals(province.toUpperCase()))
